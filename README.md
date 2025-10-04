@@ -2,7 +2,7 @@
 
 Create a spring boot project that connects to a database.
 
-The applciation wil manage at least one entity.
+The application wil manage at least one entity.
 
 Will have all the crud functionalities.
 
