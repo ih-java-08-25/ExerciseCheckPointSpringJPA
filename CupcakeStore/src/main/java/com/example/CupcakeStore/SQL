@@ -1,0 +1,16 @@
+-- Table 1: Cupcakes
+CREATE TABLE Cupcakes (
+                          cupcake_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                          name TEXT NOT NULL,
+                          flavor TEXT NOT NULL,
+                          price DECIMAL(5,2) NOT NULL
+);
+
+-- Table 2: Orders
+CREATE TABLE Orders (
+                        order_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+                        customer_name TEXT NOT NULL,
+                        cupcake_id INTEGER NOT NULL,
+                        quantity INTEGER NOT NULL,
+                        FOREIGN KEY (cupcake_id) REFERENCES Cupcakes(cupcake_id)
+);
