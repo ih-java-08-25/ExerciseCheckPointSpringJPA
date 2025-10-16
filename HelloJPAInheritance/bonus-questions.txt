@@ -1,0 +1,34 @@
+Question 1- List 3 tasks that can be performed with native SQL but are hard or impossible with JPQL
+
+1.Database-specific functions or operators
+JPQL is database-agnostic, so you can’t easily use vendor-specific features like PostgreSQL’s ILIKE, MySQL’s REGEXP, or Oracle’s hierarchical queries (CONNECT BY).
+Native SQL lets you use those directly.
+
+2.Complex joins, window functions, and CTEs
+JPQL doesn’t support advanced constructs like:
+-Common Table Expressions (WITH ... AS ...)
+-Window functions (ROW_NUMBER(), RANK(), OVER())
+-Recursive queries
+Native SQL gives you full power to use these for analytical or performance-heavy queries.
+
+3.DDL and database-level operations
+JPQL is designed only for data retrieval and updates on entities — not for:
+-Creating or altering tables/indexes
+-Calling stored procedures that return multiple result sets
+-Executing database-specific administrative commands
+Native SQL supports all of these directly.
+
+Question 2 - Explain why you might prefer using native SQL over JPQL in real-world projects
+
+You might choose native SQL when:
+1.Performance optimization is critical
+Native SQL allows you to write optimized queries that leverage database indexes, hints, or functions that JPQL can’t express efficiently.
+
+2.You’re using advanced database features
+When your app relies on vendor-specific capabilities (e.g., full-text search, geospatial queries, JSON functions), native SQL is often the only option.
+
+3.You need precise control over queries
+In complex reporting, analytics, or legacy database integration, you may need SQL fine-tuning that JPQL’s abstraction layer hides.
+
+4.Legacy database or partial ORM use
+Some enterprise projects use JPA only for persistence but still rely on raw SQL for reporting or data migration — mixing both worlds.
